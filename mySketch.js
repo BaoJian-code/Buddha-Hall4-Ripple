@@ -1,6 +1,6 @@
 let song, img, t = 0;
 let r = 0;
-
+//
 const block_size = 25;
 const block_core = 1;
 const block_move_distance = 10;
@@ -14,9 +14,15 @@ let prevFrame = 0;
 let prevTime = 0;
 let fpsInterval = 1000;
 
+/**
+ * @type {Block[][]}
+ */
 let blocks;
-let ripples = [];
 
+/**
+ * @type {Ripple[]}
+ */
+let ripples = [];
 let counter = 0;
 let min = 0;
 
@@ -26,7 +32,7 @@ function preload() {
 }
 
 function setup() {
-        //start website sound
+	//start website sound
 	getAudioContext().suspend();
 	userStartAudio();
 	//
@@ -42,7 +48,6 @@ function setup() {
 
 	setInterval(timeIt, 1000);
 	//
-
 	colorMode(HSB, 255)
 	createCanvas(windowWidth, windowHeight);
 	song.loop();
@@ -71,11 +76,11 @@ function draw() {
 
 
 	background(5);
-        fill(0);
-	rect(10, height - 40, 200, 40);
-	fill(255);
-	textSize(20);
-	text('Be Focused ' + nf(min, 2) + ':' + nf(counter, 2), 10, height - 2)
+		fill(0);
+		rect(10, height - 40, 200, 40);
+		fill(255);
+		textSize(20);
+		text('Be Focused ' + nf(min, 2) + ':' + nf(counter, 2), 10, height - 20);
 
 	if (keyIsDown(32)) {
 		if (random() < pow(fps / 60, 3)) {
@@ -108,18 +113,18 @@ function draw() {
 
 
 	noStroke();
-	
+
 	blocks.forEach((line, i) =>
 		line.forEach((block, j) => {
 			block.calcDiff(ripples);
 			block.render();
 		})
 	);
-	
 
-	
+
+
 	//insert image
-	image(img, windowWidth / 2+4, windowHeight / 2 +450, 1068, 1600);
+	image(img, windowWidth / 2 + 4, windowHeight / 2 + 450, 1068, 1600);
 
 	//get amplitude
 	let vol = amplitude.getLevel();
@@ -129,7 +134,7 @@ function draw() {
 	for (let i = 0; i < 100; i++) {
 		let alpha = 255 * (i / 100);
 		fill(255, 255, 255, alpha / 15);
-		r = r + 1/20;
+		r = r + 1 / 20;
 		circle(windowWidth / 2 + 12, windowHeight / 2 - 84, r);
 	}
 }
