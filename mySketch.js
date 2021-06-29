@@ -75,7 +75,7 @@ function draw() {
 	rect(10, height - 40, 200, 40);
 	fill(255);
 	textSize(20);
-	text('Be Focused ' + nf(min, 2) + ':' + nf(counter, 2), 10, height - 2
+	text('Be Focused ' + nf(min, 2) + ':' + nf(counter, 2), 10, height - 2)
 
 	if (keyIsDown(32)) {
 		if (random() < pow(fps / 60, 3)) {
