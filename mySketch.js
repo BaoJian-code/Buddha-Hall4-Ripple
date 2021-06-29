@@ -1,6 +1,6 @@
 let song, img, t = 0;
 let r = 0;
-//
+
 const block_size = 25;
 const block_core = 1;
 const block_move_distance = 10;
@@ -14,15 +14,11 @@ let prevFrame = 0;
 let prevTime = 0;
 let fpsInterval = 1000;
 
-/**
- * @type {Block[][]}
- */
 let blocks;
-
-/**
- * @type {Ripple[]}
- */
 let ripples = [];
+
+let counter = 0;
+let min = 0;
 
 function preload() {
 	song = loadSound('buddha bgm.mp3');
@@ -33,6 +29,18 @@ function setup() {
         //start website sound
 	getAudioContext().suspend();
 	userStartAudio();
+	//
+	// timer
+
+	function timeIt() {
+		if (counter == 59) {
+			min++;
+			counter = 0;
+		}
+		counter++;
+	}
+
+	setInterval(timeIt, 1000);
 	//
 
 	colorMode(HSB, 255)
@@ -63,7 +71,11 @@ function draw() {
 
 
 	background(5);
-
+        fill(0);
+	rect(10, height - 40, 200, 40);
+	fill(255);
+	textSize(20);
+	text('Be Focused ' + nf(min, 2) + ':' + nf(counter, 2), 10, height - 2
 
 	if (keyIsDown(32)) {
 		if (random() < pow(fps / 60, 3)) {
