@@ -28,7 +28,7 @@ h1 {
 
 
 a[href^="https"]::before {
-	content: "⭕️";
+	content: url('false.png');
 }
 
 
@@ -39,6 +39,9 @@ a[href^="https"] {
 	font-weight: normal;
 	margin:0px 10px;
 	text-decoration:none;
+}
+#true::before{
+	content: url('true.png');
 }
 #main::before{
 	content: none;
@@ -55,9 +58,9 @@ a[href^="https"] {
 	<div class="box1">
 		<a href="https://baojian-code.github.io/Buddha-Hall1-Hollow/" target="_self">Hall1:Hollow</a>
 		<a href="https://baojian-code.github.io/Buddha-Hall2-Samsara/" target="_self">Hall2:Sarama</a>
-		<a id="main" href="https://baojian-code.github.io/Buddha-Hall0-Welcome/" target="_self"><img src="BHOlogo.png" /></a>
+		<a id="main" href="https://baojian-code.github.io/Buddha-Hall0-Welcome/" target="_self"><img src="BHOlogo2.png" /></a>
 		<a href="https://baojian-code.github.io/Buddha-Hall3-Lotus/" target="_self">Hall3:Lotus</a>
-		<a href="https://baojian-code.github.io/Buddha-Hall4-Ripple/" target="_self">Hall4:Ripple</a>
+		<a id="true"href="https://baojian-code.github.io/Buddha-Hall4-Ripple/" target="_self">Hall4:Ripple</a>
 	</div>
 </body>
 
