@@ -1,6 +1,6 @@
 let song, img, t = 0;
 let r = 0;
-
+//
 const block_size = 25;
 const block_core = 1;
 const block_move_distance = 10;
@@ -26,7 +26,7 @@ let ripples = [];
 
 function preload() {
 	song = loadSound('buddha bgm.mp3');
-	img = loadImage('buddha.png');
+	img = loadImage('ripple.png');
 }
 
 function setup() {
@@ -103,17 +103,17 @@ function draw() {
 
 	
 	//insert image
-	image(img, windowWidth / 2, windowHeight / 2 - 100, 1000, 1500);
+	image(img, windowWidth / 2+4, windowHeight / 2 +450, 1068, 1600);
 
 	//get amplitude
 	let vol = amplitude.getLevel();
-	let r = map(vol, 0, 1, 1, 300)
+	let r = map(vol, 0, 1, 20, 300)
 
 	//draw red dot
 	for (let i = 0; i < 100; i++) {
 		let alpha = 255 * (i / 100);
 		fill(255, 255, 255, alpha / 15);
-		r = r + i / 100;
+		r = r + 1/20;
 		circle(windowWidth / 2 + 12, windowHeight / 2 - 84, r);
 	}
 }
