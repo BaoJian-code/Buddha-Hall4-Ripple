@@ -30,6 +30,10 @@ function preload() {
 }
 
 function setup() {
+        //start website sound
+	getAudioContext().suspend();
+	userStartAudio();
+	//
 
 	colorMode(HSB, 255)
 	createCanvas(windowWidth, windowHeight);
