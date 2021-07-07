@@ -22,26 +22,22 @@ body {
 	text-align: center;
 }
 
-h1 {
-	color: white;
-	margin: auto;
-}
-a:hover {
-        color: white;
-}
-
-a[href^="https"]::before {
+a::before {
 	content: url('false.png');
 }
 
 
-a[href^="https"] {
+a {
 	color: red;
 	font-family: "Times New Roman", serif;
 	font-size: 18px;
 	font-weight: normal;
-	margin:0px 10px;
-	text-decoration:none;
+	margin: 0px 10px;
+	text-decoration: none;
+}
+
+a:hover {
+        color: white;
 }
 #true::before{
 	content: url('true.png');
